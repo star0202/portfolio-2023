@@ -1,0 +1,26 @@
+---
+import Card from '../common/Card.astro'
+import pfp from './assets/profile.jpg'
+import { Icon } from 'astro-icon'
+---
+
+<Card>
+	<div class="flex gap-6">
+		<div class="flex gap-6 justify-center">
+			<img src={pfp} alt="Profile Picture" class="rounded-full w-32 h-32" />
+		</div>
+		<div class="flex flex-col gap-2">
+			<h1 class="text-2xl font-extrabold text-ctp-pink">파링</h1>
+			<div class="text-ctp-lavender">귀엽고싶은 멍청이 파링이에요!</div>
+			<div class="flex-grow"></div>
+			<div class="flex gap-4">
+				<a href="https://github.com/pikokr" target="_blank" rel="noreferrer">
+					<Icon name="brand-github" pack="tabler-icons" size={24} />
+				</a>
+				<a href="https://discord.gg/EkFHRG4TZZ" target="_blank" rel="noreferrer">
+					<Icon name="brand-discord" pack="tabler-icons" size={24} />
+				</a>
+			</div>
+		</div>
+	</div>
+</Card>

@@ -1,4 +1,10 @@
 ---
+import Card from '../components/common/Card.astro'
+import PaddedContainer from '../components/common/PaddedContainer.astro'
+import ProfileCard from '../components/profile/ProfileCard.astro'
+import Teams from '../components/profile/Teams.astro'
+import Timeline from '../components/profile/Timeline.astro'
+import '../stylesheets/main.scss'
 ---
 
 <html lang="en">
@@ -7,9 +13,21 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Paring World</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<PaddedContainer>
+			<div class="flex flex-col gap-4">
+				<ProfileCard />
+				<Teams />
+				<Timeline />
+				<Card>
+					<div class="flex">
+						<div class="flex-grow">2023 &copy; paring</div>
+						<div>built with ❤️</div>
+					</div>
+				</Card>
+			</div>
+		</PaddedContainer>
 	</body>
 </html>

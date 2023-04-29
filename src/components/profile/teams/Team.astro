@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+	name: string
+	year: string
+	org: string
+}
+
+const { name, org, year } = Astro.props
+---
+
+<div class="flex gap-2">
+	<div class="bg-ctp-surface2 w-28 h-28 rounded-xl overflow-hidden">
+		<img src={`https://github.com/${org}.png`} alt={name} />
+	</div>
+	<div class="p-2 flex flex-col flex-grow">
+		<div class="flex items-center">
+			<div class="font-bold flex-grow text-2xl">{name}</div>
+			<div class="font-light text-sm text-ctp-pink">
+				{year}
+			</div>
+		</div>
+		<div class="text-ctp-subtext0">
+			<slot name="description" />
+		</div>
+		<div class="flex-grow"></div>
+		<div class="flex gap-4 mt-4">
+			<a href={`https://github.com/${org}`} target="_blank" rel="noreferrer">
+				<Icon name="brand-github" pack="tabler-icons" size={24} />
+			</a>
+
+			<slot name="links" />
+		</div>
+	</div>
+</div>
